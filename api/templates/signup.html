@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>HART NEWS Signup</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container signup-container">
+      <h1 class="mt-3">HART NEWS Signup</h1>
+      <form
+        method="post"
+        action="{% url 'signup' %}"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+        <div class="form-container">
+          <div style="width: 120%">
+            <div class="form-section input-group">
+              <div class="mb-3 text-center" style="margin-left: -10px">
+                <label for="{{ form.username.id_for_label }}" class="form-label"
+                  >Username</label
+                >
+                {{ form.username }}
+              </div>
+
+              <div class="mb-3 text-center">
+                <label for="{{ form.email.id_for_label }}" class="form-label"
+                  >Email</label
+                >
+                {{ form.email }}
+              </div>
+              <div class="mb-3 text-center">
+                <label
+                  for="{{ form.date_of_birth.id_for_label }}"
+                  class="form-label"
+                  >Date of Birth</label
+                >
+                {{ form.date_of_birth }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 text-center">
+          <label for="{{ form.password1.id_for_label }}" class="form-label"
+            >Password</label
+          >
+          <div class="position-relative input-group">
+            {{ form.password1 }}
+            <div class="password-icon" onclick="togglePasswordVisibility(this)">
+              &#x1F441;
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 text-center">
+          <label for="{{ form.password2.id_for_label }}" class="form-label"
+            >Confirm Password</label
+          >
+          <div class="position-relative input-group">
+            {{ form.password2 }}
+            <div class="password-icon" onclick="togglePasswordVisibility(this)">
+              &#x1F441;
+            </div>
+          </div>
+        </div>
+        <div class="image-section mb-3 text-center">
+          <label for="{{ form.profile_image.id_for_label }}" class="form-label"
+            >Upload profile image:</label
+          >
+          {{ form.profile_image }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+
+      <p class="mt-3">
+        Already have an account?
+        <button class="signin-btn">
+          <a href="{% url 'login' %}" class="btn btn-link">Login</a>
+        </button>
+      </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function togglePasswordVisibility(icon) {
+        const input = icon.parentElement.querySelector("input");
+        input.type = input.type === "password" ? "text" : "password";
+      }
+    </script>
+  </body>
+</html>
+<style>
+  body {
+    background-color: #043576;
+    color: #043576;
+  }
+  .login-container,
+  .signup-container {
+    width: 900px;
+    margin: auto;
+    margin-top: 50px;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2em;
+  }
+  .mt-3 {
+    color: #043576;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  input {
+    position: relative;
+    border-radius: 7px;
+    background-color: white;
+    border: 3px solid #043576;
+    width: calc(90% + 9px);
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+
+  .password-icon {
+    position: absolute;
+    border-radius: 7px;
+    right: 25px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .btn-primary {
+    background-color: #043576;
+    border: 3px solid #043576;
+    border-radius: 7px;
+    width: 100%;
+  }
+  .input-group {
+    display: flex;
+    align-items: center;
+    column-gap: 26px;
+  }
+
+  .input-group label {
+    flex: 0 0 20%;
+    margin-right: 11px;
+    gap: 100px;
+  }
+
+  .input-group input {
+    flex: 1;
+    width: 100%%;
+  }
+  .image-section input {
+    width: 100%;
+  }
+
+  .btn-primary:hover {
+    color: #043576;
+    background-color: white;
+    border: 3px solid #043576;
+    border-radius: 7px;
+  }
+  a {
+    text-decoration: none;
+  }
+  .signup-btn {
+    background-color: white;
+    border-radius: 10px;
+  }
+  .image-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .image-section .form-label {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  .signin-btn a {
+    color: #043576;
+  }
+  label {
+    color: #043576;
+  }
+
+  .signin-btn {
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid #043576;
+  }
+  h1 {
+    font-family: "Times New Roman", Times, serif;
+  }
+</style>
