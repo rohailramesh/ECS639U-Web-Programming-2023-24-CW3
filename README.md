@@ -57,7 +57,7 @@ Here are some screenshots of the final application and a demonstration:
 ![HART NEWS Favourites page](https://github.com/rohailramesh/ECS639U-Web-Programming-2023-24-CW3/blob/main/Favourites%20Page.png)
 ![HART NEWS Article page](https://github.com/rohailramesh/ECS639U-Web-Programming-2023-24-CW3/blob/main/Article%20Page%201.png)
 ![HART NEWS Article page](https://github.com/rohailramesh/ECS639U-Web-Programming-2023-24-CW3/blob/main/Article%20Page%201.png)
-[![Project Demo](https://github.com/rohailramesh/ECS639U-Web-Programming-2023-24-CW3/blob/main/Home%20Page.png)](https://github.com/rohailramesh/ECS639U-Web-Programming-2023-24-CW3/blob/main/Project%20Demo.mov)
+
 
 
 ## Group Members and Contributions
